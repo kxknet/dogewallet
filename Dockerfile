@@ -12,8 +12,6 @@ RUN mkdir ~/.dogecoin
 RUN echo rpcuser=dogecoinrpc > ~/.dogecoin/dogecoin.conf
 RUN PWord=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1`
 RUN echo rpcpassword=$PWord >> ~/.dogecoin/dogecoin.conf
-RUN echo Downloading Bootstrap.dat from jrwr.io
-RUN wget --progress=bar:force http://185.21.217.21:9987/bootstrap.dat -O ~/.dogecoin/bootstrap.dat
 RUN ~/dogecoin-bin/bin/dogecoind -maxconnections=500 -daemon
 RUN echo Run \" tail -f ~/.dogecoin/debug.log \" to watch the download status.
 EXPOSE 22555 22556
