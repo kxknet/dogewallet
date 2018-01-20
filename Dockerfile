@@ -12,6 +12,6 @@ RUN mkdir ~/.dogecoin
 RUN echo rpcuser=dogecoinrpc > ~/.dogecoin/dogecoin.conf
 RUN PWord=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1`
 RUN echo rpcpassword=$PWord >> ~/.dogecoin/dogecoin.conf
-CMD ~/dogecoin-bin/bin/dogecoind -maxconnections=500 -daemon
+CMD /dogecoin-bin/bin/dogecoind -maxconnections=500 -daemon
 RUN echo Run \" tail -f ~/.dogecoin/debug.log \" to watch the download status.
 EXPOSE 22555 22556
