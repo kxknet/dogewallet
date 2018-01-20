@@ -14,3 +14,4 @@ RUN echo Downloading Bootstrap.dat from jrwr.io
 RUN wget --progress=bar:force http://185.21.217.21:9987/bootstrap.dat -O ~/.dogecoin/bootstrap.dat
 RUN ~/dogecoin-bin/bin/dogecoind -maxconnections=500 -daemon
 RUN echo Run \" tail -f ~/.dogecoin/debug.log \" to watch the download status.
+EXPOSE 22555 22556
