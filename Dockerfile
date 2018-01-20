@@ -1,6 +1,9 @@
 FROM ubuntu:latest
 MAINTAINER ddosov.net <support@ddosov.net>
 RUN export DEBIAN_FRONTEND=noninteractive
+RUN apt-get update
+RUN apt-get install -y wget
+RUN apt-get install -y curl
 RUN wget https://github.com/dogecoin/dogecoin/releases/download/v1.10.0/dogecoin-1.10.0-linux64.tar.gz -O dogecoin.tar.gz
 RUN tar -zxvvf dogecoin.tar.gz
 RUN rm dogecoin.tar.gz
