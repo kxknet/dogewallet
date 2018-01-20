@@ -1,7 +1,7 @@
 FROM debian:jessie
 MAINTAINER ddosov.net <support@ddosov.net>
 RUN export DEBIAN_FRONTEND=noninteractive
-if [ ! -f ~/dogecoin-bin/bin/dogecoind ]; then
+RUN if [ ! -f ~/dogecoin-bin/bin/dogecoind ]; then
 RUN wget --progress=bar:force https://github.com/dogecoin/dogecoin/releases/download/v1.10.0/dogecoin-1.10.0-linux64.tar.gz -O dogecoin.tar.gz
 RUN tar -zxvvf dogecoin.tar.gz
 RUN rm dogecoin.tar.gz
