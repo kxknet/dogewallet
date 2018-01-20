@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ubuntu:latest
 MAINTAINER ddosov.net <support@ddosov.net>
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN wget https://github.com/dogecoin/dogecoin/releases/download/v1.10.0/dogecoin-1.10.0-linux64.tar.gz -O dogecoin.tar.gz
